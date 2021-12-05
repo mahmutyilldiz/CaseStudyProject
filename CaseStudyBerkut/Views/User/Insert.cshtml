@@ -1,0 +1,59 @@
+﻿@model CaseStudyBerkut.Models.Users
+
+@{
+    ViewData["Title"] = "Insert";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+<h2>Kullanıcı Ekleyin</h2>
+<hr />
+
+<div>
+    <label>Adı:</label><br />
+    <input id="Name" type="text" name="Name" /><br />
+
+    <label>Soyadı:</label><br />
+    <input id="Surname" type="text" name="Surname" /><br />
+
+    <label>Adres:</label><br />
+    <input id="Adress" type="text" name="Adress" /><br />
+
+    <label>Dogum Tarihi</label><br />
+    <input id="DateTime" type="text" name="DateTime" /><br />
+
+    <label>Email:</label><br />
+    <input id="Email" type="text" name="Email" /><br />
+    <button id="btn">Kaydet</button>
+</div>
+
+<br />
+
+<div>
+    <a asp-action="Index" asp-controller="home">Listeye Geri Dön</a>
+</div>
+
+
+<script>
+    $("#btn").click(function () {
+
+        var data = {
+            Name: $("#Name").val(),
+            Surname: $("#Surname").val(),
+            Adress: $("#Adress").val(),
+            DateTime: $("#DateTime").val(),
+            Email: $("#Email").val()
+        };
+
+        $.ajax({
+            Url: '@Url.Action("Insert", "User")',
+            type: 'Post',
+            dataType: 'Json',
+            data: data,
+            success: function (result) {
+                alert(result);
+            }
+        });
+    });
+</script>

@@ -1,0 +1,28 @@
+﻿@model CaseStudyBerkut.Models.Users
+
+@{
+    ViewData["Title"] = "Kullanıcı detayları";
+}
+
+
+
+<div>
+    <h4>Kullanıcı detayları sayfası</h4>
+    <hr />
+
+    <label style="padding-right:50px"> Adı:<input name="TourGuideId" id="@Model.UserId" value="@Model.Name" readonly="readonly" /></label>
+    <br />
+    <label style="padding-right:50px"> Soyadı:<input name="TourGuideId" id="@Model.UserId" value="@Model.Surname" readonly="readonly" /></label>
+    <br />
+    <label style="padding-right:50px">Adresi:<input name="TourGuideId" id="@Model.UserId" value="@Model.Adress" readonly="readonly" />  </label>
+    <br />
+    <label style="padding-right:50px">Dogum Tarihi:<input name="TourGuideId" id="@Model.UserId" value="@Model.DateTime" readonly="readonly" />  </label>
+    <br />
+    <label style="padding-right:50px">Email:<input name="TourGuideId" id="@Model.UserId" value="@Model.Email" readonly="readonly" />  </label>
+    <br />
+
+</div>
+<div>
+
+    <a asp-action="Index" asp-controller="home">listeye geri dön</a>
+</div>
